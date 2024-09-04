@@ -1,0 +1,1915 @@
+0{% extends 'pages/base.html' %}
+{% load  static %}
+{% block content %}
+    <!--------------------- Header Responsive Section -->
+
+    <!---------------------------- Page Loader Section-->
+    <div class="page-loader">
+        <div class="page-loader-content">
+            <div class="logo-area">
+                <img src="{% static '/img/svg/logo.svg' %}" alt="">
+            </div>
+            <span class="loader"></span>
+        </div>
+    </div>
+    <!---------------------------- Page Loader Section-->
+
+    <!--------------------------------- Main Content -->
+    <main class="main-content dt-sl mb-3">
+        <div class="container main-container">
+            <!-- Start title - breadcrumb -->
+            <div class="title-breadcrumb-special dt-sl mb-3">
+                <div class="breadcrumb dt-sl">
+                    <nav>
+                        <a href="#">
+                            موبایل
+                            <i class="fa fa-caret-left"></i>
+                        </a>
+                        <a href="#">
+                            سامسونگ
+                            <i class="fa fa-caret-left"></i>
+                        </a>
+                        <a href="#">{{ product.title }}</a>
+                    </nav>
+                </div>
+            </div>
+            <!-- End title - breadcrumb -->
+            <!-- Start Product -->
+            <div class="dt-sn mb-5 dt-sl">
+                <div class="row">
+                    <!-- Product Gallery-->
+                    <div class="col-lg-4 col-md-6 ps-relative">
+                        <!-- Product Options-->
+                        <ul class="gallery-options">
+                            <li>
+                                <button class="add-favorites">
+                                    <i>
+                                        <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.15"
+                                                  d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                                                  fill="#000000"></path>
+                                            <path d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                                                  stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"></path>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span class="tooltip-option">افزودن به علاقمندی</span>
+                            </li>
+                            <li>
+                                <button class="add-favorites" data-hint="نمودار قیمت" data-bs-toggle="modal"
+                                        data-bs-target="#chartModal">
+                                    <i>
+                                        <svg fill="#000000" width="23px" height="23px" viewBox="0 0 256 256" id="Flat"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g opacity="0.2">
+                                                <rect x="156" y="40" width="56" height="168"/>
+                                            </g>
+                                            <path d="M228,200h-8V40a8.00008,8.00008,0,0,0-8-8H156a8.00008,8.00008,0,0,0-8,8V80H100a8.00008,8.00008,0,0,0-8,8v40H44a8.00008,8.00008,0,0,0-8,8v64H28a8,8,0,0,0,0,16H228a8,8,0,0,0,0-16ZM108,96h40V200H108ZM52,144H92v56H52Zm112,56V48h40V200Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span class="tooltip-option">نمودار قیمت</span>
+                            </li>
+                            <li>
+                                <button class="add-favorites">
+                                    <i>
+                                        <svg fill="#565656" width="21px" height="21px" viewBox="0 0 56 56"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M 50.1484 16.3633 C 50.1484 15.1446 49.2815 14.2539 48.0628 14.2539 L 17.6641 14.2539 L 12.1563 14.5117 L 16.6095 10.7148 L 23.3595 4.1055 C 23.7344 3.7539 23.9220 3.2852 23.9220 2.6758 C 23.9220 1.4805 23.1016 .6133 21.8595 .6133 C 21.3438 .6133 20.7344 .8711 20.3360 1.2695 L 6.5548 14.7930 C 6.0860 15.2383 5.8516 15.7774 5.8516 16.3633 C 5.8516 16.9258 6.0860 17.4648 6.5548 17.9102 L 20.3360 31.4570 C 20.7344 31.8555 21.3438 32.0899 21.8595 32.0899 C 23.1016 32.0899 23.9220 31.2461 23.9220 30.0274 C 23.9220 29.4180 23.7344 28.9726 23.3595 28.5977 L 16.6095 22.0117 L 12.1563 18.2148 L 17.6641 18.4492 L 48.0628 18.4492 C 49.2815 18.4492 50.1484 17.5821 50.1484 16.3633 Z M 50.1484 39.6367 C 50.1484 39.0508 49.9376 38.5117 49.4452 38.0664 L 35.6641 24.5430 C 35.2657 24.1446 34.6563 23.8867 34.1641 23.8867 C 32.8985 23.8867 32.0782 24.7539 32.0782 25.9726 C 32.0782 26.5586 32.2891 27.0274 32.6641 27.4024 L 39.4141 33.9883 L 43.8438 37.7852 L 38.3595 37.5508 L 7.9376 37.5508 C 6.7422 37.5508 5.8516 38.4180 5.8516 39.6367 C 5.8516 40.8555 6.7422 41.7227 7.9376 41.7227 L 38.3595 41.7227 L 43.8438 41.4883 L 39.4141 45.2852 L 32.6641 51.8711 C 32.2891 52.2461 32.0782 52.7148 32.0782 53.3008 C 32.0782 54.5195 32.8985 55.3867 34.1641 55.3867 C 34.6563 55.3867 35.2657 55.1289 35.6641 54.7305 L 49.4452 41.2070 C 49.9376 40.7617 50.1484 40.2227 50.1484 39.6367 Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span class="tooltip-option">مقایسه محصول</span>
+                            </li>
+                            <li>
+                                <button class="add-favorites" data-bs-toggle="modal" data-bs-target="#option-social">
+                                    <i>
+                                        <svg width="23px" height="23px" viewBox="0 0 64 64" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M46.08 5.771C43.7336 5.77364 41.4841 6.7069 39.825 8.36603C38.1659 10.0252 37.2327 12.2746 37.23 14.621C37.23 15.5976 37.3922 16.5675 37.71 17.491C38.1504 18.7619 38.8716 19.9172 39.82 20.871C40.6412 21.6947 41.6169 22.3483 42.691 22.7945C43.7652 23.2406 44.9168 23.4705 46.08 23.471C48.4263 23.4683 50.6758 22.5351 52.335 20.876C53.9941 19.2168 54.9273 16.9673 54.93 14.621C54.9273 12.2746 53.9941 10.0252 52.335 8.36603C50.6758 6.7069 48.4263 5.77364 46.08 5.771Z"
+                                                  fill="#999999"/>
+                                            <path d="M46.08 40.011C44.9214 40.0102 43.7741 40.2377 42.7034 40.6804C41.6327 41.123 40.6597 41.7723 39.84 42.591C38.8829 43.5436 38.1576 44.7035 37.72 45.981C37.3932 46.9059 37.2275 47.88 37.23 48.861C37.2327 51.2073 38.1659 53.4568 39.825 55.116C41.4841 56.7751 43.7336 57.7084 46.08 57.711C48.4263 57.7084 50.6758 56.7751 52.335 55.116C53.9941 53.4568 54.9273 51.2073 54.93 48.861C54.9273 46.5146 53.9941 44.2651 52.335 42.606C50.6758 40.9469 48.4263 40.0136 46.08 40.011Z"
+                                                  fill="#999999"/>
+                                            <path d="M39.84 42.591C38.8829 43.5437 38.1576 44.7035 37.72 45.981L24.92 37.9711C25.8767 37.0163 26.6049 35.8573 27.05 34.5811L39.84 42.591Z"
+                                                  fill="#000000"/>
+                                            <path d="M39.82 20.871L27.05 28.851C26.6224 27.5711 25.8996 26.4098 24.94 25.461L37.71 17.491C38.1504 18.7619 38.8716 19.9172 39.82 20.871Z"
+                                                  fill="#000000"/>
+                                            <path d="M27.05 28.851C26.6224 27.5711 25.8996 26.4098 24.94 25.461C24.1203 24.6353 23.1449 23.9803 22.0704 23.5341C20.9959 23.0878 19.8435 22.859 18.68 22.861C16.3346 22.8612 14.0853 23.7924 12.4259 25.4498C10.7666 27.1073 9.8329 29.3556 9.82999 31.701C9.83263 34.0473 10.7659 36.2968 12.425 37.9559C14.0841 39.6151 16.3336 40.5483 18.68 40.551C19.8386 40.5517 20.9859 40.3243 22.0566 39.8816C23.1273 39.4389 24.1002 38.7897 24.92 37.971C25.8767 37.0162 26.6049 35.8572 27.05 34.581C27.3686 33.6542 27.5309 32.681 27.53 31.701C27.5309 30.7308 27.3686 29.7674 27.05 28.851Z"
+                                                  fill="#999999"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span class="tooltip-option">اشتراک گذاری</span>
+                            </li>
+                            <li>
+                                <button class="add-favorites" data-bs-toggle="modal" data-bs-target="#btn-option-alarm">
+                                    <i>
+                                        <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.15"
+                                                  d="M12 3C8.68629 3 6 5.68629 6 9C6 13 4 17 4 17H20C20 17 18 13 18 9C18 5.68629 15.3137 3 12 3Z"
+                                                  fill="#000000"/>
+                                            <path d="M9 17V18C9 18.394 9.0776 18.7841 9.22836 19.1481C9.37913 19.512 9.6001 19.8427 9.87868 20.1213C10.1573 20.3999 10.488 20.6209 10.8519 20.7716C11.2159 20.9224 11.606 21 12 21C12.394 21 12.7841 20.9224 13.1481 20.7716C13.512 20.6209 13.8427 20.3999 14.1213 20.1213C14.3999 19.8427 14.6209 19.512 14.7716 19.1481C14.9224 18.7841 15 18.394 15 18V17M18 9C18 12 20 17 20 17H4C4 17 6 13 6 9C6 5.732 8.732 3 12 3C15.268 3 18 5.732 18 9Z"
+                                                  stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span class="tooltip-option">اطلاع رسانی</span>
+                            </li>
+                        </ul>
+                        <div class="product-timeout position-relative pt-5 mb-3">
+                            <div class="promotion-badge">
+                                فروش ویژه
+                            </div>
+                            <div class="countdown-timer" countdown data-date="10 24 2025 20:20:20">
+                                <span data-days>0</span>:
+                                <span data-hours>0</span>:
+                                <span data-minutes>0</span>:
+                                <span data-seconds>0</span>
+                            </div>
+                        </div>
+                        <div class="product-gallery">
+                            <span class="badge">پر فروش</span>
+                            <div class="product-carousel owl-carousel" data-slider-id="1">
+                                {% for images in product.image.all %}
+                                	<div class="item">
+                                    <a class="gallery-item" href="{{ images.Image.url }}"
+                                       data-fancybox="gallery1">
+                                        <img src="{{ images.image.url }}" alt="Product">
+                                    </a>
+                                </div>
+                                {% endfor %}
+                                
+                            </div>
+                            <div class="d-flex justify-content-center flex-wrap">
+                                <ul class="product-thumbnails owl-thumbs ml-2" data-slider-id="1">
+                                    <li class="owl-thumb-item active">
+                                        <a href="">
+                                            <img src="{% static '/img/single-product/thumbnail-1.jpg' %}" alt="Product">
+                                        </a>
+                                    </li>
+                                    <li class="owl-thumb-item">
+                                        <a href="">
+                                            <img src="./assets/img/single-product/thumbnail-2.jpg" alt="Product">
+                                        </a>
+                                    </li>
+                                    <li class="owl-thumb-item">
+                                        <a href="">
+                                            <img src="./assets/img/single-product/thumbnail-3.jpg" alt="Product">
+                                        </a>
+                                    </li>
+                                    <li class="owl-thumb-item">
+                                        <a href="">
+                                            <img src="./assets/img/single-product/thumbnail-4.jpg" alt="Product">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="product-thumbnails">
+                                    <li>
+                                        <a style="display: flex;align-items: center;" class="navi-link text-sm"
+                                           href="./assets/video/download.mp4"
+                                           data-fancybox data-width="960" data-height="640">
+                                            <i>
+                                                <svg width="30px" height="30px" version="1.1" id="Layer_1"
+                                                     xmlns="http://www.w3.org/2000/svg"
+                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     viewBox="0 0 511.999 511.999" xml:space="preserve"><polygon style="fill:#4d4d4d" points="503.828,206.98 503.828,479.32 471.147,454.417 427.572,343.15 471.147,231.883 "/>
+                                                    <polygon style="fill:#737373"
+                                                             points="471.147,231.883 471.147,454.417 389.445,392.171 367.657,343.15 389.445,294.129 "/>
+                                                    <rect x="324.085" y="283.233" style="fill:#b9b9b9" width="65.362"
+                                                          height="119.83"/>
+                                                    <path style="fill:#737373" d="M324.083,206.98h-32.681v272.34h32.681c17.974,0,32.681-14.706,32.681-32.681V239.661
+                                                        C356.764,221.686,342.057,206.98,324.083,206.98z"/>
+                                                    <path style="fill:#969696" d="M324.083,239.661v206.979c0,17.974-14.706,32.681-32.681,32.681H40.849
+                                                        c-17.974,0-32.681-14.706-32.681-32.681V239.661c0-17.974,14.706-32.681,32.681-32.681h250.553
+                                                        C309.377,206.98,324.083,221.686,324.083,239.661z"/>
+                                                    <polygon style="fill:#b9b9b9"
+                                                             points="291.402,283.235 291.402,403.065 258.721,403.065 226.04,343.15 258.721,283.235 "/>
+                                                    <rect x="51.745" y="283.233" style="fill:#dcdcdc" width="206.979"
+                                                          height="119.83"/>
+                                                    <path style="fill:#969696"
+                                                          d="M95.319,32.682V206.98c48.128,0,87.149-39.021,87.149-87.149S143.447,32.682,95.319,32.682z"/>
+                                                    <path style="fill:#b9b9b9" d="M95.319,32.682c30.088,0,54.468,39.021,54.468,87.149s-24.38,87.149-54.468,87.149
+                                                        c-48.128,0-87.149-39.021-87.149-87.149S47.191,32.682,95.319,32.682z"/>
+                                                    <path style="fill:#969696"
+                                                          d="M269.615,32.682V206.98c48.128,0,87.149-39.021,87.149-87.149S317.743,32.682,269.615,32.682z"/>
+                                                    <path style="fill:#b9b9b9" d="M269.615,32.682c30.088,0,54.468,39.021,54.468,87.149s-24.38,87.149-54.468,87.149
+                                                        c-48.128,0-87.149-39.021-87.149-87.149S221.487,32.682,269.615,32.682z"/>
+                                                    <g><path style="fill:#eee" d="M269.617,152.51c-18.02,0-32.681-14.661-32.681-32.681s14.661-32.681,32.681-32.681
+                                                            c18.02,0,32.681,14.661,32.681,32.681S287.637,152.51,269.617,152.51z"/>
+                                                        <path style="fill:#eee" d="M95.319,152.51c-18.02,0-32.681-14.661-32.681-32.681s14.661-32.681,32.681-32.681
+                                                            S128,101.808,128,119.829S113.339,152.51,95.319,152.51z"/></g>
+                                                    <path d="M507.456,199.656c-2.783-1.379-6.107-1.06-8.578,0.822l-102.645,78.205c-1.466-2.184-3.959-3.621-6.787-3.621h-24.511
+                                                        v-35.404c0-22.526-18.325-40.851-40.851-40.851h-1.155c25.328-17.152,42.006-46.154,42.006-78.979
+                                                        c0-52.56-42.76-95.319-95.319-95.319c-38.83,0-72.306,23.342-87.149,56.729C167.626,47.851,134.149,24.51,95.319,24.51
+                                                        C42.76,24.51,0,67.269,0,119.829c0,32.825,16.678,61.827,42.006,78.979h-1.155C18.325,198.807,0,217.133,0,239.658v206.979
+                                                        c0,22.526,18.325,40.851,40.851,40.851h283.234c22.526,0,40.851-18.325,40.851-40.851v-35.404h24.511c4.512,0,8.17-3.657,8.17-8.17
+                                                        V298.174l98.043-74.699v239.347l-68.58-52.251c-3.588-2.733-8.715-2.044-11.45,1.548c-2.734,3.588-2.043,8.715,1.547,11.45
+                                                        l81.701,62.249c1.451,1.106,3.196,1.671,4.952,1.671c1.235,0,2.476-0.28,3.625-0.849c2.783-1.379,4.544-4.216,4.544-7.322V206.978
+                                                        C512,203.872,510.238,201.035,507.456,199.656z M269.617,40.85c43.549,0,78.979,35.429,78.979,78.979s-35.429,78.979-78.979,78.979
+                                                        s-78.979-35.429-78.979-78.979S226.068,40.85,269.617,40.85z M216.304,198.807h-67.671c14.734-9.977,26.537-23.969,33.836-40.388
+                                                        C189.767,174.838,201.569,188.83,216.304,198.807z M16.34,119.829c0-43.549,35.429-78.979,78.979-78.979
+                                                        s78.979,35.429,78.979,78.979s-35.429,78.979-78.979,78.979S16.34,163.378,16.34,119.829z M348.596,446.637
+                                                        c0,13.515-10.995,24.511-24.511,24.511H40.851c-13.516,0-24.511-10.996-24.511-24.511V239.658c0-13.515,10.995-24.511,24.511-24.511
+                                                        h283.234c13.516,0,24.511,10.996,24.511,24.511V446.637z M381.277,394.893h-16.34V291.403h16.34V394.893z"/>
+                                                    <path d="M51.745,258.722h130.723c4.512,0,8.17-3.657,8.17-8.17s-3.658-8.17-8.17-8.17H51.745c-4.512,0-8.17,3.657-8.17,8.17
+                                                        S47.233,258.722,51.745,258.722z"/>
+                                                    <path d="M291.404,275.063H51.745c-4.512,0-8.17,3.657-8.17,8.17v119.83c0,4.513,3.658,8.17,8.17,8.17h32.681
+                                                        c4.512,0,8.17-3.657,8.17-8.17c0-4.513-3.658-8.17-8.17-8.17H59.915V291.403h223.319v103.489H117.106c-4.512,0-8.17,3.657-8.17,8.17
+                                                        c0,4.513,3.658,8.17,8.17,8.17h174.298c4.512,0,8.17-3.657,8.17-8.17v-119.83C299.574,278.72,295.916,275.063,291.404,275.063z"/>
+                                                    <path d="M240.168,136.177c4.359-1.169,6.944-5.651,5.775-10.009c-0.554-2.069-0.837-4.202-0.837-6.339
+                                                        c0-13.515,10.995-24.511,24.511-24.511s24.511,10.996,24.511,24.511s-10.995,24.511-24.511,24.511c-2.134,0-4.268-0.282-6.341-0.838
+                                                        c-4.357-1.17-8.839,1.418-10.007,5.777c-1.169,4.359,1.418,8.838,5.776,10.007c3.452,0.926,7.01,1.394,10.572,1.394
+                                                        c22.526,0,40.851-18.325,40.851-40.851s-18.325-40.851-40.851-40.851c-22.526,0-40.851,18.325-40.851,40.851
+                                                        c0,3.565,0.47,7.123,1.394,10.573C231.33,134.762,235.816,137.348,240.168,136.177z"/>
+                                                    <path d="M95.319,78.978c-22.525,0-40.851,18.325-40.851,40.851c0,3.565,0.47,7.123,1.394,10.573c1.17,4.36,5.655,6.946,10.008,5.775
+                                                        c4.359-1.169,6.944-5.651,5.775-10.009c-0.554-2.069-0.837-4.202-0.837-6.339c0-13.515,10.995-24.511,24.511-24.511
+                                                        s24.511,10.996,24.511,24.511s-10.995,24.511-24.511,24.511c-2.134,0-4.268-0.282-6.341-0.838c-4.359-1.17-8.838,1.418-10.007,5.777
+                                                        s1.418,8.838,5.776,10.007c3.452,0.926,7.01,1.394,10.572,1.394c22.526,0,40.851-18.325,40.851-40.851S117.845,78.978,95.319,78.978
+                                                        z"/>
+                                                    </svg>
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Info -->
+                    <div class="col-lg-8 col-md-6 py-2">
+                        <div class="product-info dt-sl">
+                            <div class="product-title dt-sl mb-3">
+                                <h1>
+                                    گوشی موبایل سامسونگ
+                                </h1>
+                                <h3>Samsung Galaxy Mobile Phone</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="product-variant dt-sl">
+                                        <div
+                                                class="section-title text-sm-title title-wide no-after-title-wide mb-0">
+                                            <h2>انتخاب رنگ:</h2>
+                                        </div>
+                                        <ul class="product-variants float-right ml-3">
+                                            <li class="ui-variant">
+                                                <label class="ui-variant ui-variant--color">
+                                                        <span class="ui-variant-shape"
+                                                              style="background-color: #212121"></span>
+                                                    <input type="radio" value="1" name="color"
+                                                           class="variant-selector" checked>
+                                                    <span class="ui-variant--check">مشکی</span>
+                                                </label>
+                                            </li>
+                                            <li class="ui-variant">
+                                                <label class="ui-variant ui-variant--color">
+                                                        <span class="ui-variant-shape"
+                                                              style="background-color: #f6f6f6"></span>
+                                                    <input type="radio" value="3" name="color"
+                                                           class="variant-selector">
+                                                    <span class="ui-variant--check">سفید</span>
+                                                </label>
+                                            </li>
+                                            <li class="ui-variant">
+                                                <label class="ui-variant ui-variant--color">
+                                                        <span class="ui-variant-shape"
+                                                              style="background-color: #2196f3"></span>
+                                                    <input type="radio" value="4" name="color"
+                                                           class="variant-selector">
+                                                    <span class="ui-variant--check">آبی</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-params dt-sl">
+                                        <ul data-title="ویژگی‌های محصول">
+                                            <li>
+                                                <span>حافظه داخلی: </span>
+                                                <span> 256 گیگابایت </span>
+                                            </li>
+                                            <li>
+                                                <span>شبکه های ارتباطی: </span>
+                                                <span> 2G,3G,4G </span>
+                                            </li>
+                                            <li>
+                                                <span>رزولوشن عکس: </span>
+                                                <span> 12.0 مگاپیکسل</span>
+                                            </li>
+                                            <li>
+                                                <span>تعداد سیم کارت: </span>
+                                                <span> تک </span>
+                                            </li>
+                                            <li>
+                                                <span>ویژگی‌های خاص: </span>
+                                                <span> مقاوم در برابر آب
+                                                        مناسب عکاسی
+                                                        مناسب عکاسی سلفی
+                                                    </span>
+                                            </li>
+                                        </ul>
+                                        <div class="sum-more">
+                                                <span class="show-more btn-link-border">
+                                                    + موارد بیشتر
+                                                </span>
+                                            <span class="show-less btn-link-border">
+                                                    - بستن
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <div
+                                            class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
+                                        <h2>کد محصول:123456</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="product-guaranteed">
+                                        <i class="fas fa-badge-check"></i>
+                                        <p>بیش از 500 نفر از خریداران این محصول را پیشنهاد داده‌اند</p>
+                                    </div>
+                                    <div class="product-summary">
+                                        <nav id="stack-menu">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="product-seller-row-main">
+                                                            <img src="./assets/img/seller-logo.png" alt="">
+                                                            <div class="product-seller-first-line">
+                                                                فروشنده:
+                                                                <span class="product-seller-name">دیجی پرس</span>
+                                                            </div>
+                                                            <div class="product-seller-second-line">
+                                                                عملکرد:
+                                                                <span class="font-weight-bold">۵</span>
+                                                                از ۵
+                                                                <span>
+                                                                        <span class="u-divider"></span>
+                                                                        <span class="font-weight-bold">۸۶.۶٪</span>
+                                                                        رضایت از کالا
+                                                                    </span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <ul class="product-seller-box--shadowed">
+                                                        <div class="product-info-box-body-wrapper">
+                                                            <div class="product-info-box-body">
+                                                                <div class="product-info-box-row font-weight-bold">
+                                                                    <span class="seller-name">دیجی پرس</span>
+                                                                </div>
+                                                                <div class="product-info-box-row">
+                                                                    عملکرد
+                                                                    <span
+                                                                            class="font-weight-bold u-text-big">۵</span>
+                                                                    از ۵
+                                                                    <div class="product-info-box-feedbacks">
+                                                                        <div class="product-feedback">
+                                                                            <div
+                                                                                    class="product-feedback-percent product-feedback-percent--green">
+                                                                                ۱۰۰٪
+                                                                            </div>
+                                                                            تامین به موقع
+                                                                        </div>
+                                                                        <div class="product-feedback">
+                                                                            <div
+                                                                                    class="product-feedback-percent product-feedback-percent--green">
+                                                                                ۱۰۰٪
+                                                                            </div>
+                                                                            تعهد ارسال
+                                                                        </div>
+                                                                        <div class="product-feedback">
+                                                                            <div
+                                                                                    class="product-feedback-percent product-feedback-percent--green">
+                                                                                ۹۹.۹٪
+                                                                            </div>
+                                                                            بدون مرجوعی
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-info-box-row">
+                                                                        <span
+                                                                                class="font-weight-bold u-text-big">۸۶.۶٪</span>
+                                                                    رضایت از کالا
+                                                                    <span class="text-secondary">
+                                                                            (<span>۲۱</span> نفر)
+                                                                        </span>
+                                                                    <div class="product-info-box-v-feedbacks">
+                                                                        <div class="product-v-feedback">
+                                                                            <div class="product-v-feedback-label">
+                                                                                کاملا راضی
+                                                                            </div>
+                                                                            <div class="product-v-feedback-bar">
+                                                                                <div style="width: 52.38%;"
+                                                                                     class="product-v-feedback-bar product-v-feedback-bar--very-green">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-v-feedback-percent">
+                                                                                ۵۲٪
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-v-feedback">
+                                                                            <div class="product-v-feedback-label">
+                                                                                راضی
+                                                                            </div>
+                                                                            <div class="product-v-feedback-bar">
+                                                                                <div style="width: 33.33%;"
+                                                                                     class="product-v-feedback-bar product-v-feedback-bar--green">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-v-feedback-percent">
+                                                                                ۳۳٪
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-v-feedback">
+                                                                            <div class="product-v-feedback-label">
+                                                                                نظری ندارم
+                                                                            </div>
+                                                                            <div class="product-v-feedback-bar">
+                                                                                <div style="width: 9.52%;"
+                                                                                     class="product-v-feedback-bar product-v-feedback-bar--yellow">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-v-feedback-percent">
+                                                                                ۱۰٪
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-v-feedback">
+                                                                            <div class="product-v-feedback-label">
+                                                                                ناراضی
+                                                                            </div>
+                                                                            <div class="product-v-feedback-bar">
+                                                                                <div style="width: 4.76%;"
+                                                                                     class="product-v-feedback-bar product-v-feedback-bar--orange">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-v-feedback-percent">
+                                                                                ۵٪
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-v-feedback">
+                                                                            <div class="product-v-feedback-label">
+                                                                                کاملا ناراضی
+                                                                            </div>
+                                                                            <div class="product-v-feedback-bar">
+                                                                                <div style="width: 0%;"
+                                                                                     class="product-v-feedback-bar product-v-feedback-bar--red">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-v-feedback-percent">
+                                                                                ۰٪
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a>
+                                                        <i class="far fa-shield-check"></i>
+                                                        گارانتی ۱۸ ماهه دیجی پرس
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="far fa-box-check product-delivery-warehouse"></i>
+                                                        موجود در انبار دیجی پرس
+                                                    </a>
+                                                    <ul class="product-seller-box--shadowed">
+                                                        <div class="product-info-box-body-wrapper">
+                                                            <div class="product-info-box-body">
+                                                                <div class="shipment-info-box-row">
+                                                                    <div class="font-weight-bold">
+                                                                            <span>
+                                                                                آماده ارسال
+                                                                            </span>
+                                                                    </div>
+                                                                    <div class="u-text-spaced">
+                                                                        این کالا در انبار دیجی پرس موجود و آماده
+                                                                        پردازش است.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            
+                                               
+                                            <div class="product-seller-row product-seller-row--price">
+                                                <div class="product-seller-price-info">
+                                                    <div class="product-seller-price-prev">
+                                                        5,000,000
+                                                    </div>
+                                                    <div class="product-seller-price-off">
+                                                        {{ product.discount}}%
+                                                    </div>
+                                                </div>
+                                                <div class="product-seller-price-real">
+                                                    <div class="product-seller-price-raw">{{ product.price }}</div>
+                                                    تومان
+                                                </div>
+                                                
+                                                <div
+                                                        class="product-additional-item product-additional-item--no-icon">
+                                                    <span>300,000</span>&nbsp; تومان تخفیف سازمانی کسر گردیده است.
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="product-seller-row product-seller-row--add-to-cart">
+                                                
+                                                <button type="button" value="{{ product.id }}" id="cartadd" href="{% url 'cartadd' %}" class="btn-add-to-cart btn-add-to-cart--full-width">
+                                                    افزودن به سبد خرید
+                                                </button>
+                                                
+                                                <div class="product-seller-digiclub">
+                                                    <img src="./assets/img/digiclub.png" alt="">
+                                                    <div>
+                                                        دریافت
+                                                        <span>۱۵۰</span>
+                                                        امتیاز دیجی‌کلاب با خرید این کالا
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="other-seller">
+                                                <a href="#product-seller-all">
+                                                    <div class="product-seller-row-main">
+                                                            <span class="font-weight-bold">
+                                                                <span id="more-suppliers-count">۳</span>
+                                                                فروشنده
+                                                            </span>
+                                                        دیگر این کالا
+                                                    </div>
+                                                    <div class="product-seller-row-info">
+                                                        مشاهده
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="mb-add-to-cart-btn-wrapper">
+                    <a href="#" class="mb-add-to-cart-btn">افزودن به سبد خرید</a>
+                </div> -->
+            </div>
+            <!-- sellers -->
+            <div class="product-sellers shadow-around mb-5" id="product-seller-all">
+                <div class="product-seller">
+                    <div class="product-seller-col">
+                        <div class="product-seller-title">
+                            <div class="icon">
+                                <i class="fas fa-store-alt"></i>
+                            </div>
+                            <div class="detail">
+                                <div class="name">دیجی پرس <span
+                                        class="badge badge-light rounded-pill">برگزیده</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="value">۹۰٪</span>
+                                    <span class="label">رضایت خریداران</span>
+                                    <span class="divider">|</span>
+                                    <span class="label">عملکرد</span>
+                                    <span class="value">عالی</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-seller-col">
+                        <div class="product-seller-conditions">
+                            <div class="product-seller-info">
+                                <i class="fad fa-truck-container"></i>
+                                <span>ارسال از دیجی پرس</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-seller-col">
+                        <div class="product-seller-guarantee">
+                            <div class="product-seller-info">
+                                <i class="fad fa-shield-check"></i>
+                                <span>گارانتی ۱۸ ماهه دیجی پرس</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-seller-col">
+                        <div class="product-seller-price-action">
+                            <div class="product-seller-price">۵,00۰,۰۰۰<span class="currency">تومان</span></div>
+                            <div class="product-seller-action"><a href="#" class="btn btn-outline-danger">افزودن به
+                                سبد</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-seller">
+                    <div class="product-seller-col">
+                        <div class="product-seller-title">
+                            <div class="icon">
+                                <i class="fas fa-store-alt"></i>
+                            </div>
+                            <div class="detail">
+                                <div class="name">دیجی پرس <span
+                                        class="badge badge-light rounded-pill">برگزیده</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="value">۹۰٪</span>
+                                    <span class="label">رضایت خریداران</span>
+                                    <span class="divider">|</span>
+                                    <span class="label">عملکرد</span>
+                                    <span class="value">عالی</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-seller-col">
+                        <div class="product-seller-conditions">
+                            <div class="product-seller-info">
+                                <i class="fad fa-truck-container"></i>
+                                <span>ارسال از دیجی پرس</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-seller-col">
+                        <div class="product-seller-guarantee">
+                            <div class="product-seller-info">
+                                <i class="fad fa-shield-check"></i>
+                                <span>گارانتی ۱۸ ماهه دیجی پرس</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-seller-col">
+                        <div class="product-seller-price-action">
+                            <div class="product-seller-price">۵,00۰,۰۰۰<span class="currency">تومان</span></div>
+                            <div class="product-seller-action"><a href="#" class="btn btn-outline-danger">افزودن به
+                                سبد</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dt-sn mb-5 px-0 dt-sl pt-0">
+                <!-- Start tabs -->
+                <section class="tabs-product-info mb-3 dt-sl">
+                    <div class="ah-tab-wrapper border-bottom dt-sl">
+                        <div class="ah-tab dt-sl">
+                            <a class="ah-tab-item" data-ah-tab-active="true" href="">
+                                <i>
+                                    <svg width="23px" height="23px" viewBox="0 0 128 128"
+                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         aria-hidden="true" role="img" class="iconify iconify--noto"
+                                         preserveAspectRatio="xMidYMid meet">
+                                        <g opacity=".8" fill="#90caf9">
+                                            <path d="M52.44 53.27c-1.03-1.71-3.17-5.28-18.55-5.69c-10.54-.36-16.68.93-18.81 3.97c-.93 1.46-1.85 5-.95 13.57c1.56 14.33 8.76 14.71 17.89 15.18l.69.04c.99.05 1.92.08 2.8.08c12.94 0 15.2-5.65 16.86-13.48c1.48-6.67 1.51-11.26.07-13.67z">
+                                            </path>
+                                            <path d="M112.7 51.51c-2.1-3.01-8.24-4.29-18.78-3.93c-15.39.42-17.53 3.98-18.56 5.69c-1.44 2.41-1.42 7 .08 13.64c1.67 7.85 3.92 13.49 16.86 13.49c.88 0 1.82-.03 2.8-.08l.69-.04c9.12-.47 16.33-.85 17.89-15.18c.89-8.55-.03-12.09-.98-13.59z">
+                                            </path>
+                                        </g>
+                                        <path d="M123.8 47.84s-1-1.7-19.03-3.41c-18.93-1.8-28.35 2-32.25 4.41c-.7.3-1.9.6-3.31.5h-.3c-1.9-.1-3.61-.2-5.61-.2h-.1c-1.1 0-3.51.1-5.21.2c-.8.1-1.5 0-2.1-.2c-3.61-2.4-13.02-6.61-32.75-4.71C5.1 46.14 4.1 47.84 4.1 47.84L4 54.65s2.7.8 4.41 2.9c1.7 2.1 2.5 14.12 5.41 19.73c4.4 8.72 26.14 6.52 26.14 6.52s8.91.7 13.22-6.81c3.71-6.41 5.21-15.43 5.61-17.63c.9-.9 2.6-2 5.11-2.1c2.8 0 4.61 1.4 5.41 2.4c.4 2.7 1.9 11.22 5.51 17.33c4.31 7.51 13.22 6.81 13.22 6.81s21.74 2.2 26.14-6.51c2.8-5.61 3.61-17.63 5.41-19.73c1.7-2.2 4.41-2.9 4.41-2.9l-.2-6.82zM51.38 66.71c-1.7 8.01-3.91 13.42-18.63 12.62c-9.52-.5-16.13-.5-17.63-14.32c-.9-8.61.1-11.82.8-12.92c.7-1 3.21-4.01 17.93-3.51c14.72.4 16.83 3.71 17.73 5.21c.9 1.5 1.6 4.91-.2 12.92zm61.3-1.7c-1.5 13.82-8.11 13.82-17.63 14.32c-14.72.8-16.93-4.61-18.63-12.62c-1.8-8.01-1.1-11.42-.2-12.92c.9-1.5 3.01-4.81 17.73-5.21c14.72-.5 17.23 2.5 17.93 3.51c.7 1.1 1.7 4.3.8 12.92z"
+                                              fill="#804833">
+                                        </path>
+                                        <path d="M26.82 52.22c4.33-.84 5.79 1.26 5.37 3.14c-.77 3.47-4.11 1.62-9 4.6c-2.06 1.26-2.9 2.16-3.66 2.13c-.73-.03-1.36-.78-1.01-2.2c.63-2.58 1.68-6.39 8.3-7.67z"
+                                              opacity=".7" fill="#ffffff">
+                                        </path>
+                                        <path d="M83.66 53.21c1.77-.99 6.74-1.88 7.27.73c.54 2.69-1.99 3.43-3.78 4.04c-4.23 1.44-4.93 3.49-5.81 4.05c-.59.37-2.33 1.21-2.14-1.34c.22-3.24 1.28-5.69 4.46-7.48z"
+                                              opacity=".7" fill="#ffffff">
+                                        </path>
+                                    </svg>
+                                </i>نقد و بررسی</a>
+                            <a class="ah-tab-item" href="">
+                                <i>
+                                    <svg width="18px" height="18px" viewBox="0 0 48 48" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 42C11.2091 42 13 40.2091 13 38C13 35.7909 11.2091 34 9 34C6.79086 34 5 35.7909 5 38C5 40.2091 6.79086 42 9 42Z"
+                                              fill="#2F88FF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+                                        <path d="M9 14C11.2091 14 13 12.2092 13 10C13 7.79086 11.2091 6 9 6C6.79086 6 5 7.79086 5 10C5 12.2092 6.79086 14 9 14Z"
+                                              fill="#2F88FF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+                                        <path d="M9 28C11.2091 28 13 26.2092 13 24C13 21.7908 11.2091 20 9 20C6.79086 20 5 21.7908 5 24C5 26.2092 6.79086 28 9 28Z"
+                                              fill="#2F88FF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+                                        <path d="M21 24H43" stroke="#000000" stroke-width="4" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M21 38H43" stroke="#000000" stroke-width="4" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M21 10H43" stroke="#000000" stroke-width="4" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+                                </i>
+                                مشخصات</a>
+                            <a class="ah-tab-item" href="">
+                                <i>
+                                    <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M5.17157 6.17157C4 7.34315 4 9.22876 4 13V17V18.5858C4 19.4767 5.07714 19.9229 5.70711 19.2929L7.85355 17.1464C7.92581 17.0742 7.96194 17.0381 8.00788 17.019C8.05383 17 8.10492 17 8.20711 17H14C15.8638 17 16.7956 17 17.5307 16.6955C18.5108 16.2895 19.2895 15.5108 19.6955 14.5307C20 13.7956 20 12.8638 20 11C20 9.13623 20 8.20435 19.6955 7.46927C19.2895 6.48915 18.5108 5.71046 17.5307 5.30448C16.7956 5 15.8638 5 14 5H12C8.22876 5 6.34315 5 5.17157 6.17157Z"
+                                              fill="#2A4157" fill-opacity="0.24"/>
+                                        <path d="M8.5 9.5L15.5 9.5" stroke="#222222" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M8.5 12.5L13.5 12.5" stroke="#222222" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+                                </i>
+                                نظرات کاربران</a>
+                            <a class="ah-tab-item" href="">
+                                <i>
+                                    <svg width="18px" height="18px" version="1.1" id="Layer_1"
+                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         viewBox="0 0 512 512" xml:space="preserve">
+                                            <g>
+                                                <circle style="fill:#1FCFC1;" cx="256.551" cy="470.479" r="31.323"/>
+                                                <path style="fill:#1FCFC1;" d="M256,401.786c-17.34,0-31.395-14.057-31.395-31.395v-97.04c0-17.34,14.057-31.395,31.395-31.395
+                                                    c46.584,0,84.482-37.898,84.482-84.482S302.584,72.991,256,72.991s-84.482,37.898-84.482,84.482
+                                                    c0,17.34-14.057,31.395-31.395,31.395s-31.395-14.057-31.395-31.395C108.727,76.266,174.793,10.199,256,10.199
+                                                    s147.273,66.066,147.273,147.273c0,70.437-49.702,129.482-115.878,143.906v69.013C287.395,387.731,273.34,401.786,256,401.786z"/>
+                                            </g>
+                                        <g>
+                                                <path style="fill:#4D4D4D;" d="M256.55,512c-22.895,0-41.522-18.627-41.522-41.522s18.627-41.522,41.522-41.522
+                                                    s41.522,18.627,41.522,41.522S279.445,512,256.55,512z M256.55,449.353c-11.647,0-21.124,9.476-21.124,21.124
+                                                    c0,11.647,9.476,21.125,21.124,21.125s21.124-9.476,21.124-21.124C277.673,458.831,268.197,449.353,256.55,449.353z"/>
+                                            <path style="fill:#4D4D4D;" d="M256,411.986c-22.935,0-41.594-18.659-41.594-41.594V273.35c0-22.935,18.659-41.594,41.594-41.594
+                                                    c40.96,0,74.284-33.323,74.284-74.284S296.96,83.189,256,83.189s-74.284,33.323-74.284,74.284
+                                                    c0,22.935-18.659,41.594-41.594,41.594s-41.594-18.659-41.594-41.594C98.527,70.642,169.169,0,256,0
+                                                    s157.473,70.642,157.473,157.473c0,36.106-12.579,71.41-35.42,99.404c-20.756,25.44-49.086,43.867-80.458,52.489v61.025
+                                                    C297.594,393.327,278.935,411.986,256,411.986z M256,62.79c52.208,0,94.682,42.475,94.682,94.682S308.208,252.154,256,252.154
+                                                    c-11.687,0-21.196,9.509-21.196,21.196v97.041c0,11.687,9.509,21.196,21.196,21.196s21.196-9.509,21.196-21.196v-69.014
+                                                    c0-4.796,3.341-8.944,8.028-9.966c62.493-13.62,107.85-69.95,107.85-133.94c0-75.582-61.491-137.073-137.074-137.073
+                                                    S118.926,81.889,118.926,157.473c0,11.687,9.509,21.196,21.196,21.196s21.196-9.509,21.196-21.196
+                                                    C161.318,105.265,203.792,62.79,256,62.79z"/>
+                                            <path style="fill:#4D4D4D;" d="M256,379.41c-5.633,0-10.199-4.566-10.199-10.199v-59.155c0-5.633,4.566-10.199,10.199-10.199
+                                                    c5.633,0,10.199,4.566,10.199,10.199v59.155C266.199,374.844,261.633,379.41,256,379.41z"/>
+                                            <path style="fill:#4D4D4D;" d="M256,292.717c-5.633,0-10.199-4.566-10.199-10.199v-9.179c0-5.633,4.566-10.199,10.199-10.199
+                                                    c5.633,0,10.199,4.566,10.199,10.199v9.179C266.199,288.151,261.633,292.717,256,292.717z"/>
+                                            </g>
+                                        </svg>
+                                </i>پرسش و
+                                پاسخ</a>
+                        </div>
+                    </div>
+                    <div class="ah-tab-content-wrapper product-info px-4 dt-sl"
+                         style="padding-left: 20px !important;padding-right: 20px !important;">
+                        <div class="ah-tab-content dt-sl" data-ah-tab-active="true">
+                            <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
+                                <h2>نقد و بررسی</h2>
+                            </div>
+                            <div class="product-title dt-sl">
+                                <h1>
+                                    گوشی موبایل سامسونگ
+                                </h1>
+                                <h3>Samsung Galaxy Mobile Phone</h3>
+                            </div>
+                            <div class="description-product dt-sl mt-3 mb-3">
+                                <div class="container">
+                                    <p>
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+                                        طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                        لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                                        ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده،
+                                        شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
+                                        طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد،
+                                        در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط
+                                        سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی
+                                        سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+                                        طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                        لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                                        ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده،
+                                        شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
+                                        طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد،
+                                        در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط
+                                        سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی
+                                        سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+                                        طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                        لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
+                                        ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده،
+                                        شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
+                                        طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد،
+                                        در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط
+                                        سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی
+                                        سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="accordion dt-sl accordion-product" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="false"
+                                                    aria-controls="collapseOne">
+                                                Face ID
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                         data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <img src="assets/img/single-product/sp1.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                            </p>
+                                            <img src="assets/img/single-product/sp2.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                            </p>
+                                            <img src="assets/img/single-product/sp8.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseTwo" aria-expanded="false"
+                                                    aria-controls="collapseTwo">
+                                                نمایش‌گر
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                         data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <img src="assets/img/single-product/sp3.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                            </p>
+                                            <img src="assets/img/single-product/1436228.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                            </p>
+                                            <img src="assets/img/single-product/sp4.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                                    aria-controls="collapseThree">
+                                                طراحی و ساخت
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                         data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <img src="assets/img/single-product/sp5.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                            </p>
+                                            <img src="assets/img/single-product/sp6.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                            </p>
+                                            <img src="assets/img/single-product/sp7.jpg" alt="">
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
+                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ah-tab-content params dt-sl">
+                            <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
+                                <h2>مشخصات فنی</h2>
+                            </div>
+                            <div class="product-title dt-sl mb-3">
+                                <h1>
+                                    گوشی موبایل سامسونگ
+                                </h1>
+                                <h3>Samsung Galaxy Mobile Phone</h3>
+                            </div>
+                            <section>
+                                <h3 class="params-title">مشخصات کلی</h3>
+                                <ul class="params-list">
+                                    <li>
+                                        <div class="params-list-key">
+                                            <span class="d-block">ابعاد</span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    7 × 70 × 140 میلی‌متر
+                                                </span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    7 × 70 × 140 میلی‌متر
+                                                </span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    7 × 70 × 140 میلی‌متر
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="params-list-key">
+                                            <span class="d-block">توضیحات سیم کارت</span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    سایز نانو (8 × 13 میلی‌متر)
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="params-list-key">
+                                            <span class="d-block">وزن</span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    180 گرم
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="params-list-key">
+                                            <span class="d-block">ویژگی‌های خاص</span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    مقاوم در برابر آب 
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="params-list-key">
+                                            <span class="d-block">تعداد سیم کارت</span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    تک سیم کارت
+                                                </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h3 class="params-title">پردازنده</h3>
+                                <ul class="params-list">
+                                    <li>
+                                        <div class="params-list-key">
+                                            <span class="d-block">تراشه</span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    Apple
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="params-list-key">
+                                            <span class="d-block">نوع پردازنده</span>
+                                        </div>
+                                        <div class="params-list-value">
+                                                <span class="d-block">
+                                                    64 بیت
+                                                </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="ah-tab-content comments-tab dt-sl">
+                            <div class="section-title title-wide no-after-title-wide mb-0 dt-sl">
+                                <h2 class="mb-3">امتیاز کاربران به:</h2>
+                            </div>
+                            <div class="product-title dt-sl mb-3">
+                                <h1>
+                                    گوشی موبایل سامسونگ
+                                </h1>
+                                <h3>Samsung Galaxy Mobile Phone<span
+                                        class="rate-product">(2 از 5 | 10 نفر)</span></h3>
+                            </div>
+                            <div class="dt-sl">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <ul class="content-expert-rating">
+                                            <li>
+                                                <div class="cell">طراحی</div>
+                                                <div class="cell">
+                                                    <div class="rating rating--general" data-rate-digit="عالی">
+                                                        <div class="rating-rate" data-rate-value="100%"
+                                                             style="width: 50%;"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="cell">ارزش خرید</div>
+                                                <div class="cell">
+                                                    <div class="rating rating--general" data-rate-digit="عالی">
+                                                        <div class="rating-rate" data-rate-value="100%"
+                                                             style="width: 20%;"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="cell">کیفیت ساخت</div>
+                                                <div class="cell">
+                                                    <div class="rating rating--general" data-rate-digit="عالی">
+                                                        <div class="rating-rate" data-rate-value="100%"
+                                                             style="width: 80%;"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="cell">امکانات و قابلیت ها</div>
+                                                <div class="cell">
+                                                    <div class="rating rating--general" data-rate-digit="عالی">
+                                                        <div class="rating-rate" data-rate-value="100%"
+                                                             style="width: 30%;"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="comments-summary-note">
+                                                <span>شما هم می‌توانید در مورد این کالا نظر
+                                                    بدهید.</span>
+                                            <p>برای ثبت نظر، لازم است ابتدا وارد حساب کاربری خود
+                                                شوید. اگر این محصول را قبلا از دیجی پرس خریده
+                                                باشید، نظر
+                                                شما به عنوان مالک محصول ثبت خواهد شد.
+                                            </p>
+                                            <div class="dt-sl mt-2">
+                                                <a href="#" class="btn-primary-cm btn-with-icon">
+                                                    <i>
+                                                        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                  d="M5.17157 6.17157C4 7.34315 4 9.22876 4 13V17V18.5858C4 19.4767 5.07714 19.9229 5.70711 19.2929L7.85355 17.1464C7.92581 17.0742 7.96194 17.0381 8.00788 17.019C8.05383 17 8.10492 17 8.20711 17H14C15.8638 17 16.7956 17 17.5307 16.6955C18.5108 16.2895 19.2895 15.5108 19.6955 14.5307C20 13.7956 20 12.8638 20 11C20 9.13623 20 8.20435 19.6955 7.46927C19.2895 6.48915 18.5108 5.71046 17.5307 5.30448C16.7956 5 15.8638 5 14 5H12C8.22876 5 6.34315 5 5.17157 6.17157Z"
+                                                                  fill="#2A4157" fill-opacity="0.24"></path>
+                                                            <path d="M8.5 9.5L15.5 9.5" stroke="#222222"
+                                                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M8.5 12.5L13.5 12.5" stroke="#222222"
+                                                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </i>
+                                                    افزودن نظر جدید
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="comments-area dt-sl mt-3">
+                                    <div
+                                            class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
+                                        <h2>نظرات کاربران</h2>
+                                        <p class="count-comment">123 نظر</p>
+                                    </div>
+                                    <ol class="comment-list">
+                                        <!-- #comment-## -->
+                                        <li>
+                                            <div class="comment-body">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-12">
+                                                        <div class="message-light message-light--purchased">
+                                                            خریدار این محصول
+                                                        </div>
+                                                        <ul class="comments-user-shopping">
+                                                            <li>
+                                                                <div class="cell">رنگ خریداری
+                                                                    شده:
+                                                                </div>
+                                                                <div class="cell color-cell">
+                                                                        <span class="shopping-color-value"
+                                                                              style="background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25)"></span>سفید
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="cell">خریداری شده
+                                                                    از:
+                                                                </div>
+                                                                <div class="cell seller-cell">
+                                                                    <span class="o-text-blue">دیجی پرس</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="message-light message-light--opinion-positive">
+                                                            خرید این محصول را توصیه می‌کنم
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9 col-sm-12 comment-content">
+                                                        <div class="comment-title">
+                                                            گوشی موبایل سامسونگ
+                                                        </div>
+                                                        <div class="comment-author">
+                                                            توسط محمد رضایی در تاریخ 10 آبان 1403
+                                                        </div>
+
+                                                        <p>لورم ایپسوم متن ساختگی</p>
+
+                                                        <div class="footer">
+                                                            <div class="comments-likes">
+                                                                آیا این نظر برایتان مفید بود؟
+                                                                <button class="btn-like" data-counter="15">بله
+                                                                </button>
+                                                                <button class="btn-like" data-counter="5">خیر
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- #comment-## -->
+                                        <li>
+                                            <div class="comment-body">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-12">
+                                                        <div class="message-light message-light--purchased">
+                                                            خریدار این محصول
+                                                        </div>
+                                                        <ul class="comments-user-shopping">
+                                                            <li>
+                                                                <div class="cell">رنگ خریداری
+                                                                    شده:
+                                                                </div>
+                                                                <div class="cell color-cell">
+                                                                        <span class="shopping-color-value"
+                                                                              style="background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25)"></span>سفید
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="cell">خریداری شده
+                                                                    از:
+                                                                </div>
+                                                                <div class="cell seller-cell">
+                                                                    <span class="o-text-blue">دیجی پرس</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="message-light message-light--opinion-positive">
+                                                            خرید این محصول را توصیه می‌کنم
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9 col-sm-12 comment-content">
+                                                        <div class="comment-title">
+                                                            گوشی موبایل سامسونگ
+                                                        </div>
+                                                        <div class="comment-author">
+                                                            توسط محمد رضایی در تاریخ 10 آبان 1403
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-4 col-sm-6 col-12">
+                                                                <div class="content-expert-evaluation-positive">
+                                                                    <span>نقاط قوت</span>
+                                                                    <ul>
+                                                                        <li>دوربین‌های پرقدرت
+                                                                        </li>
+                                                                        <li>باتری باظرفیت بالا</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-sm-6 col-12">
+                                                                <div class="content-expert-evaluation-negative">
+                                                                    <span>نقاط ضعف</span>
+                                                                    <ul>
+                                                                        <li>نقات ضعف 1</li>
+                                                                        <li>نقاط ضعف 2
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p>
+                                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                                                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه
+                                                            و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                                                            تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
+                                                            کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
+                                                            آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+                                                            افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص
+                                                            طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
+                                                            صورت می توان امید داشت که تمام و دشواری موجود در ارائه
+                                                            راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز
+                                                            شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+                                                            دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                                        </p>
+
+                                                        <div class="footer">
+                                                            <div class="comments-likes">
+                                                                آیا این نظر برایتان مفید بود؟
+                                                                <button class="btn-like" data-counter="18">بله
+                                                                </button>
+                                                                <button class="btn-like" data-counter="7">خیر
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- #comment-## -->
+                                        <li>
+                                            <div class="comment-body">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-12">
+                                                        <div class="message-light message-light--purchased">
+                                                            خریدار این محصول
+                                                        </div>
+                                                        <ul class="comments-user-shopping">
+                                                            <li>
+                                                                <div class="cell">رنگ خریداری
+                                                                    شده:
+                                                                </div>
+                                                                <div class="cell color-cell">
+                                                                        <span class="shopping-color-value"
+                                                                              style="background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25)"></span>سفید
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="cell">خریداری شده
+                                                                    از:
+                                                                </div>
+                                                                <div class="cell seller-cell">
+                                                                    <span class="o-text-blue">دیجی پرس</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="message-light message-light--opinion-positive">
+                                                            خرید این محصول را توصیه می‌کنم
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9 col-sm-12 comment-content">
+                                                        <div class="comment-title">
+                                                            گوشی موبایل سامسونگ
+                                                        </div>
+                                                        <div class="comment-author">
+                                                            توسط محمد رضایی در تاریخ 10 آبان 1403
+                                                        </div>
+
+                                                        <p>لورم ایپسوم متن ساختگی</p>
+
+                                                        <div class="footer">
+                                                            <div class="comments-likes">
+                                                                آیا این نظر برایتان مفید بود؟
+                                                                <button class="btn-like" data-counter="12">بله
+                                                                </button>
+                                                                <button class="btn-like" data-counter="۶">خیر
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- #comment-## -->
+                                        <li>
+                                            <div class="comment-body">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-12">
+                                                        <div class="message-light message-light--purchased">
+                                                            خریدار این محصول
+                                                        </div>
+                                                        <ul class="comments-user-shopping">
+                                                            <li>
+                                                                <div class="cell">رنگ خریداری
+                                                                    شده:
+                                                                </div>
+                                                                <div class="cell color-cell">
+                                                                        <span class="shopping-color-value"
+                                                                              style="background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25)"></span>سفید
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="cell">خریداری شده
+                                                                    از:
+                                                                </div>
+                                                                <div class="cell seller-cell">
+                                                                    <span class="o-text-blue">دیجی پرس</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="message-light message-light--opinion-positive">
+                                                            خرید این محصول را توصیه می‌کنم
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9 col-sm-12 comment-content">
+                                                        <div class="comment-title">
+                                                            گوشی موبایل سامسونگ
+                                                        </div>
+                                                        <div class="comment-author">
+                                                            توسط محمد رضایی در تاریخ 10 آبان 1403
+                                                        </div>
+
+                                                        <p>لورم ایپسوم متن ساختگی</p>
+
+                                                        <div class="footer">
+                                                            <div class="comments-likes">
+                                                                آیا این نظر برایتان مفید بود؟
+                                                                <button class="btn-like" data-counter="۱۱">بله
+                                                                </button>
+                                                                <button class="btn-like" data-counter="۶">خیر
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- #comment-## -->
+                                        <li>
+                                            <div class="comment-body">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-12">
+                                                        <div class="message-light message-light--purchased">
+                                                            خریدار این محصول
+                                                        </div>
+                                                        <ul class="comments-user-shopping">
+                                                            <li>
+                                                                <div class="cell">رنگ خریداری
+                                                                    شده:
+                                                                </div>
+                                                                <div class="cell color-cell">
+                                                                        <span class="shopping-color-value"
+                                                                              style="background-color: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25)"></span>سفید
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="cell">خریداری شده
+                                                                    از:
+                                                                </div>
+                                                                <div class="cell seller-cell">
+                                                                    <span class="o-text-blue">دیجی پرس</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="message-light message-light--opinion-positive">
+                                                            خرید این محصول را توصیه می‌کنم
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9 col-sm-12 comment-content">
+                                                        <div class="comment-title">
+                                                            گوشی موبایل سامسونگ
+                                                        </div>
+                                                        <div class="comment-author">
+                                                            توسط محمد رضایی در تاریخ 10 آبان 1403
+                                                        </div>
+
+                                                        <p>لورم ایپسوم متن ساختگی</p>
+
+                                                        <div class="footer">
+                                                            <div class="comments-likes">
+                                                                آیا این نظر برایتان مفید بود؟
+                                                                <button class="btn-like" data-counter="۱۱">بله
+                                                                </button>
+                                                                <button class="btn-like" data-counter="۶">خیر
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ah-tab-content dt-sl">
+                            <div class="section-title title-wide no-after-title-wide dt-sl">
+                                <h2 class="mb-3">پرسش و پاسخ</h2>
+                                <p class="count-comment" style="font-weight: 500;font-size: 16px;color: #f26b7b;">پرسش
+                                    خود را در مورد محصول مطرح نمایید</p>
+                            </div>
+                            <div class="form-question-answer dt-sl mb-3">
+                                <form action="">
+                                    <textarea class="form-control mb-3" rows="5"></textarea>
+                                    <button class="btn ml-3 w-100 mb-3"
+                                            style="font-weight: 700; color: #fff; background-color: #ee384e;box-shadow: none;">
+                                        ثبت پرسش
+                                    </button>
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label" for="customCheck3">اولین پاسخی که به
+                                            پرسش من داده شد، از طریق ایمیل به من اطلاع دهید.</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="comments-area default">
+                                <div
+                                        class="section-title text-sm-title title-wide no-after-title-wide mt-5 mb-0 dt-sl">
+                                    <h2>پرسش ها و پاسخ ها</h2>
+                                    <p class="count-comment" style="font-weight: 500;font-size: 16px;color: #f26b7b;">
+                                        120 پرسش</p>
+                                </div>
+                                <ol class="comment-list">
+                                    <!-- #comment-## -->
+                                    <li>
+                                        <div class="comment-body">
+                                            <div class="comment-author">
+                                                <span class="icon-comment">?</span>
+                                                <cite class="fn">رضا</cite>
+                                                <span class="says">گفت:</span>
+                                                <div class="commentmetadata">
+                                                    <a href="#">
+                                                        مهر ۲۰, 1403 در 10:20 ب.ظ
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                                                صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                            </p>
+
+                                            <div class="reply"><a class="comment-reply-link" href="#">پاسخ</a></div>
+                                        </div>
+                                        <ol class="children">
+                                            <li>
+                                                <div class="comment-body">
+                                                    <div class="comment-author">
+                                                            <span
+                                                                    class="icon-comment fa fa-lightbulb-on"></span>
+                                                        <cite class="fn">اصغر</cite> <span
+                                                            class="says">گفت:</span>
+                                                        <div class="commentmetadata">
+                                                            <a href="#">
+                                                                مهر ۲۰, 1403 در 10:20 ب.ظ
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی
+                                                        نامفهوم از صنعت چاپ و با استفاده از
+                                                        طراحان گرافیک است.
+                                                        چاپگرها و متون بلکه روزنامه و مجله در
+                                                        ستون و سطرآنچنان که لازم است و برای
+                                                        شرایط فعلی تکنولوژی
+                                                        مورد نیاز و کاربردهای متنوع با هدف بهبود
+                                                        ابزارهای کاربردی می باشد.</p>
+
+                                                    <div class="reply"><a class="comment-reply-link"
+                                                                          href="#">پاسخ</a></div>
+                                                </div>
+                                                <ol class="children">
+                                                    <li>
+                                                        <div class="comment-body">
+                                                            <div class="comment-author">
+                                                                <span class="icon-comment">?</span>
+                                                                <cite class="fn">محمد</cite>
+                                                                <span class="says">گفت:</span>
+                                                                <div class="commentmetadata">
+                                                                    <a href="#">
+                                                                        مهر ۲۰, 1403 در 10:20 ب.ظ
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <p>عالیه</p>
+
+                                                            <div class="reply"><a class="comment-reply-link"
+                                                                                  href="#">پاسخ</a></div>
+                                                        </div>
+                                                        <ol class="children">
+                                                            <li>
+                                                                <div class="comment-body">
+                                                                    <div class="comment-author">
+                                                                        <span class="icon-comment fa fa-lightbulb-on"></span>
+                                                                        <cite class="fn">اشکان</cite>
+                                                                        <span class="says">گفت:</span>
+                                                                        <div class="commentmetadata">
+                                                                            <a href="#">
+                                                                                مهر ۲۰, 1403 در 10:20 ب.ظ
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p>لورم ایپسوم متن ساختگی با
+                                                                        تولید سادگی نامفهوم از
+                                                                        صنعت چاپ و با استفاده از
+                                                                        طراحان
+                                                                        گرافیک است. چاپگرها و
+                                                                        متون بلکه روزنامه و مجله
+                                                                        در ستون و سطرآنچنان که
+                                                                        لازم است و
+                                                                        برای شرایط فعلی تکنولوژی
+                                                                        مورد نیاز و کاربردهای
+                                                                        متنوع با هدف بهبود
+                                                                        ابزارهای
+                                                                        کاربردی می باشد.</p>
+
+                                                                    <div class="reply"><a class="comment-reply-link"
+                                                                                          href="#">پاسخ</a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <!-- #comment-## -->
+                                                        </ol>
+                                                        <!-- .children -->
+                                                    </li>
+                                                    <!-- #comment-## -->
+                                                </ol>
+                                                <!-- .children -->
+                                            </li>
+                                            <!-- #comment-## -->
+                                        </ol>
+                                        <!-- .children -->
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End tabs -->
+            </div>
+            <!-- End Product -->
+            <!-- Start Product-Slider -->
+            <section class="slider-section dt-sl mb-5">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <div class="section-title text-sm-title title-wide no-after-title-wide">
+                            <h2>خریداران این محصول، محصولات زیر را هم خریده‌اند</h2>
+                            <a href="#">مشاهده همه</a>
+                        </div>
+                    </div>
+
+                    <!-- Start Product-Slider -->
+                    <div class="col-12">
+                        <div class="product-carousel carousel-lg owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="product-card mb-3">
+                                    <div class="product-head">
+                                        <div class="rating-stars">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="discount">
+                                            <span>20%</span>
+                                        </div>
+                                    </div>
+                                    <a class="product-thumb" href="#">
+                                        <img src="./assets/img/products/p11.jpg" alt="Product Thumbnail">
+                                    </a>
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">
+                                            <a href="#">گوشی موبایل</a>
+                                        </h5>
+                                        <a class="product-meta" href="#">گوشی موبایل</a>
+                                        <span class="product-price">200,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="product-card mb-3">
+                                    <div class="product-head">
+                                        <div class="rating-stars">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <a class="product-thumb" href="#">
+                                        <img src="./assets/img/products/p7.jpg" alt="Product Thumbnail">
+                                    </a>
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">
+                                            <a href="#">گوشی موبایل</a>
+                                        </h5>
+                                        <a class="product-meta" href="#">گوشی موبایل</a>
+                                        <span class="product-price">200,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="product-card mb-3">
+                                    <div class="product-head">
+                                        <div class="rating-stars">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <a class="product-thumb" href="#">
+                                        <img src="./assets/img/products/p12.jpg" alt="Product Thumbnail">
+                                    </a>
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">
+                                            <a href="#">گوشی موبایل</a>
+                                        </h5>
+                                        <a class="product-meta" href="#">گوشی موبایل</a>
+                                        <span class="product-price">200,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="product-card mb-3">
+                                    <div class="product-head">
+                                        <div class="rating-stars">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <a class="product-thumb" href="#">
+                                        <img src="./assets/img/products/p12.jpg" alt="Product Thumbnail">
+                                    </a>
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">
+                                            <a href="#">گوشی موبایل</a>
+                                        </h5>
+                                        <a class="product-meta" href="#">گوشی موبایل</a>
+                                        <span class="product-price">200,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="product-card mb-3">
+                                    <div class="product-head">
+                                        <div class="rating-stars">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <a class="product-thumb" href="#">
+                                        <img src="./assets/img/products/p10.jpg" alt="Product Thumbnail">
+                                    </a>
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">
+                                            <a href="#">گوشی موبایل</a>
+                                        </h5>
+                                        <a class="product-meta" href="#">گوشی موبایل</a>
+                                        <span class="product-price">200,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="product-card mb-3">
+                                    <div class="product-head">
+                                        <div class="rating-stars">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="discount">
+                                            <span>20%</span>
+                                        </div>
+                                    </div>
+                                    <a class="product-thumb" href="#">
+                                        <img src="./assets/img/products/p9.jpg" alt="Product Thumbnail">
+                                    </a>
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">
+                                            <a href="#">گوشی موبایل</a>
+                                        </h5>
+                                        <a class="product-meta" href="#">گوشی موبایل</a>
+                                        <span class="product-price">185,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="product-card mb-3">
+                                    <div class="product-head">
+                                        <div class="rating-stars">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <a class="product-thumb" href="#">
+                                        <img src="./assets/img/products/p7.jpg" alt="Product Thumbnail">
+                                    </a>
+                                    <div class="product-card-body">
+                                        <h5 class="product-title">
+                                            <a href="#">گوشی موبایل</a>
+                                        </h5>
+                                        <a class="product-meta" href="#">گوشی موبایل</a>
+                                        <span class="product-price">54,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Product-Slider -->
+
+                </div>
+            </section>
+            <!-- End Product-Slider -->
+        </div>
+    </main>
+    <!--------------------------------- Main Content -->
+
+    <!-------------------------- Mobile Footer Section-->
+    <div class="mobile-footer d-lg-none d-table justify-content-center shadow-box bg-white position-fixed p-2 w-100"
+         style="bottom:0;z-index: 100;table-layout: fixed;">
+        <ul class="d-table-row">
+            <li class="d-table-cell pointer">
+                <div class="mf-link nav-link text-center">
+                <span class="d-block mf-link-icon" style="cursor: pointer;">
+                    <svg height="25pxx" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         viewBox="0 0 512 512" xml:space="preserve">
+                        <path style="fill:#CEE8FA;" d="M395.47,296.3H116.531c-36.816,0-57.855-42.009-35.803-71.491L225.983,30.621
+                            c14.993-20.043,45.041-20.043,60.034,0l145.254,194.188C453.325,254.291,432.286,296.3,395.47,296.3z"/>
+                        <path style="fill:#2D527C;" d="M443.755,215.471L298.501,21.284C288.382,7.759,272.893,0,256.001,0s-32.383,7.759-42.5,21.284
+                            L68.245,215.471c-13.759,18.393-15.916,42.579-5.631,63.119c10.286,20.54,30.946,33.298,53.916,33.298h66.552
+                            C185.227,422.598,275.94,512,387.153,512c8.608,0,15.589-6.979,15.589-15.589V381.652c0-8.61-6.981-15.589-15.589-15.589
+                            c-14.01,0-27.556-5.074-38.144-14.29c-6.494-5.651-16.339-4.971-21.993,1.525c-5.653,6.494-4.97,16.34,1.525,21.993
+                            c12.293,10.699,27.185,17.765,43.025,20.577v84.258c-86.772-7.791-155.289-79.949-157.307-168.237H395.47
+                            c22.97,0,43.63-12.759,53.917-33.298C459.671,258.052,457.514,233.866,443.755,215.471z M421.509,264.629
+                            c-5.043,10.069-14.777,16.081-26.04,16.081H116.53c-11.261,0-20.995-6.011-26.038-16.081c-5.043-10.07-4.027-21.466,2.72-30.484
+                            L238.466,39.957c4.173-5.581,10.565-8.781,17.534-8.781c6.97,0,13.36,3.2,17.534,8.781l145.254,194.188
+                            C425.534,243.165,426.551,254.56,421.509,264.629z"/>
+                    </svg>
+                </span>
+                </div>
+            </li>
+            <li class="d-table-cell">
+                <a href="" class="mf-link nav-link text-center">
+                    <div class="mf-link-icon position-relative d-table mx-auto">
+                        <svg width="25px" height="25px" version="1" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                            <g fill="#616161">
+                                <rect x="34.6" y="28.1" transform="matrix(.707 -.707 .707 .707 -15.154 36.586)"
+                                      width="4" height="17"></rect>
+                                <circle cx="20" cy="20" r="16"></circle>
+                            </g>
+                            <rect x="36.2" y="32.1" transform="matrix(.707 -.707 .707 .707 -15.839 38.239)"
+                                  fill="#37474F" width="4" height="12.3"></rect>
+                            <circle fill="#64B5F6" cx="20" cy="20" r="13"></circle>
+                            <path fill="#BBDEFB"
+                                  d="M26.9,14.2c-1.7-2-4.2-3.2-6.9-3.2s-5.2,1.2-6.9,3.2c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1 C16,13.9,17.9,13,20,13s4,0.9,5.4,2.5c0.2,0.2,0.5,0.4,0.8,0.4c0.2,0,0.5-0.1,0.6-0.2C27.2,15.3,27.2,14.6,26.9,14.2z"></path>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+            <li class="d-table-cell">
+                <a href="" class="mf-link nav-link text-center">
+                    <span class="d-block mf-link-icon">
+                        <svg class="svg-icon"
+                             style="position: relative;width: 35px; height: 35px;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M336.2 571.3h337.9v319.3H336.2z" fill="#2867CE"></path>
+                            <path d="M296.3 405.6l185-185c9-9 20.9-13.5 32.7-13.5 11.9 0 23.7 4.5 32.7 13.5l185.7 185.7 194.1 194.1c1.9 1.9 5.1 1.3 6.2-1.1 7.9-17.9 12.1-37.4 12.1-57.5 0-38.1-14.8-73.8-41.7-100.7L614.7 152.6c-55.6-55.5-145.9-55.5-201.5 0L124.9 441C98 467.9 83.2 503.6 83.2 541.7c0 20.1 4.2 39.7 12.1 57.5 1.1 2.4 4.3 3 6.2 1.1l194.8-194.7z"
+                                  fill="#2867CE"></path>
+                            <path d="M201.6 566.2c-5.4 5.4-8.4 12.7-8.4 20.3v230.7c0 54.3 44 98.3 98.3 98.3h103.3c10.4 0 18.9-8.4 18.9-18.9V640.7c0-11.4 14.1-16.5 24.2-16.5h152.3c11.6 0 24.2 6.3 24.2 16.5v255.9c0 10.4 8.4 18.9 18.9 18.9h103.3c54.3 0 98.3-44.1 98.3-98.3V586.5c0-7.6-3-14.9-8.4-20.3L526 265.9c-6.7-6.7-17.4-6.7-24.1 0L201.6 566.2z"
+                                  fill="#BDD2EF"></path>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            <li class="d-table-cell">
+                <a href="" class="mf-link nav-link text-center">
+                    <div class="position-relative mf-link-icon d-table mx-auto">
+                    <span class="d-block mf-link-icon">
+                        <svg version="1" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"
+                             viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                            <path fill="#2E7D32"
+                                  d="M25.4,5.6c-0.8-0.8-2-0.8-2.8,0l-12,12c-0.8,0.8-0.8,2,0,2.8C11,20.8,11.5,21,12,21s1-0.2,1.4-0.6l12-12 C26.2,7.6,26.2,6.4,25.4,5.6z"></path>
+                            <path fill="#1B5E20"
+                                  d="M37.4,17.6l-12-12c-0.8-0.8-2-0.8-2.8,0c-0.8,0.8-0.8,2,0,2.8l12,12C35,20.8,35.5,21,36,21s1-0.2,1.4-0.6 C38.2,19.6,38.2,18.4,37.4,17.6z"></path>
+                            <path fill="#388E3C"
+                                  d="M37.4,41H10.6c-1,0-1.8-0.7-2-1.6L5,21h38l-3.7,18.4C39.1,40.3,38.3,41,37.4,41z"></path>
+                            <path fill="#4CAF50"
+                                  d="M43,23H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,22.1,44.1,23,43,23z"></path>
+                            <polygon fill="#DCEDC8"
+                                     points="30.8,24.8 22.9,32.7 19.2,28.9 17,31.1 22.9,37 33,26.9"></polygon>
+                        </svg>
+                    </span>
+                    </div>
+                </a>
+            </li>
+            <li class="d-table-cell">
+                <a class="mf-link nav-link text-center" data-bs-toggle="offcanvas" href="#cartCanvas" role="button"
+                   aria-controls="cart canvas">
+                    <div class="position-relative mf-link-icon d-table mx-auto">
+                    <span class="d-block mf-link-icon">
+                        <svg width="25px" height="25px" version="1" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                            <path fill="#607D8B"
+                                  d="M39.6,27.2c0.1-0.7,0.2-1.4,0.2-2.2s-0.1-1.5-0.2-2.2l4.5-3.2c0.4-0.3,0.6-0.9,0.3-1.4L40,10.8 c-0.3-0.5-0.8-0.7-1.3-0.4l-5,2.3c-1.2-0.9-2.4-1.6-3.8-2.2l-0.5-5.5c-0.1-0.5-0.5-0.9-1-0.9h-8.6c-0.5,0-1,0.4-1,0.9l-0.5,5.5 c-1.4,0.6-2.7,1.3-3.8,2.2l-5-2.3c-0.5-0.2-1.1,0-1.3,0.4l-4.3,7.4c-0.3,0.5-0.1,1.1,0.3,1.4l4.5,3.2c-0.1,0.7-0.2,1.4-0.2,2.2 s0.1,1.5,0.2,2.2L4,30.4c-0.4,0.3-0.6,0.9-0.3,1.4L8,39.2c0.3,0.5,0.8,0.7,1.3,0.4l5-2.3c1.2,0.9,2.4,1.6,3.8,2.2l0.5,5.5 c0.1,0.5,0.5,0.9,1,0.9h8.6c0.5,0,1-0.4,1-0.9l0.5-5.5c1.4-0.6,2.7-1.3,3.8-2.2l5,2.3c0.5,0.2,1.1,0,1.3-0.4l4.3-7.4 c0.3-0.5,0.1-1.1-0.3-1.4L39.6,27.2z M24,35c-5.5,0-10-4.5-10-10c0-5.5,4.5-10,10-10c5.5,0,10,4.5,10,10C34,30.5,29.5,35,24,35z"></path>
+                            <path fill="#455A64"
+                                  d="M24,13c-6.6,0-12,5.4-12,12c0,6.6,5.4,12,12,12s12-5.4,12-12C36,18.4,30.6,13,24,13z M24,30 c-2.8,0-5-2.2-5-5c0-2.8,2.2-5,5-5s5,2.2,5,5C29,27.8,26.8,30,24,30z"></path>
+                        </svg>
+                    </span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+    $(document).on('click','#cartadd',function(e){
+      e.preventDefault();
+      $.ajax({
+          type :'POST',
+          url  : '{% url 'cartadd' %}',
+          data:{
+              Product_id : $('#cartadd').val(),
+              {#product_qty : $('#select-product option:selected').text(),#}
+              csrfmiddlewaretoken : '{{ csrf_token }}',
+              action : 'post',
+          },
+          success: function (json){
+              console.log(json)
+              document.getElementById('cart_len').textContent = json.qty
+              {#location.reload()#}
+          },
+          error: function (xhr,errmsg,err){
+              
+          }
+      })
+    })
+    </script>
+{% endblock %}
+<!-------------------------- Mobile Footer Section-->
+
+<!-------------------------------- Footer Section -->
+
+<!------------------------------ Cities Map Modal -->
+
+
+<!-- Core JS Files -->
